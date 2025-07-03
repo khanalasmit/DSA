@@ -29,12 +29,20 @@ void Pop(){
     node *ptr=top;
     if(top==NULL){
         cout<<"Underflow\n";
+        return;
     }
     else{
         top=top->next;
     }
     cout<<"Free ptr"<<endl;
-    cout<<"Value freed:"<<ptr->data;
+    cout<<"Value freed:"<<ptr->data<<endl;
+}
+void Display() {
+    node *ptr = top;
+    while (ptr != NULL) {
+        cout << "The data: " << ptr->data << endl;
+        ptr = ptr->next;
+    }
 }
 int main()
 {
@@ -58,6 +66,7 @@ int main()
         break;
 
     case 3:
+        Display();
         break;
 
     }
